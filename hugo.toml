@@ -2,7 +2,8 @@ baseURL = 'https://USERNAME.github.io/'  # TODO: Replace USERNAME with your GitH
 languageCode = 'en-us'
 title = 'My Findings & Learnings'
 theme = 'PaperMod'
-paginate = 10
+[pagination]
+  pagerSize = 10
 
 [params]
   env = 'production'
