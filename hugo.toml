@@ -1,86 +1,71 @@
-baseURL = 'https://gvarchala-pixel.github.io/'
-languageCode = 'en-us'
-title = 'My Findings & Learnings'
-theme = 'PaperMod'
+baseurl = "https://gvarchala-pixel.github.io/"
+title = "My Findings & Learnings"
+theme = "hugo-theme-cleanwhite"
+languageCode = "en-us"
+preserveTaxonomyNames = true
+
 [pagination]
-  pagerSize = 10
-
-[params]
-  env = 'production'
-  description = 'A blog about my personal findings, learnings, and explorations.'
-  author = 'Varchaleswari Ganugapati'
-  defaultTheme = 'auto'  # auto, light, dark
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowWordCount = true
-  ShowRssButtonInSectionTermList = true
-  UseHugoToc = true
-  disableSpecial1stPost = false
-  hidemeta = false
-  hideSummary = false
-  showtoc = true
-
-  [params.homeInfoParams]
-    Title = "Hey there! \U0001F44B"
-    Content = "Welcome to my blog — a place where I share my findings, learnings, and things that excite me."
-
-  [[params.socialIcons]]
-    name = 'github'
-    url = 'https://github.com/gvarchala-pixel'
-
-  [params.cover]
-    hidden = false
-    hiddenInList = false
-    hiddenInSingle = false
-
-  [params.editPost]
-    URL = 'https://github.com/gvarchala-pixel/gvarchala-pixel.github.io/tree/main/content'
-    Text = 'Suggest Changes'
-    appendFilePath = true
-
-  [params.fuseOpts]
-    isCaseSensitive = false
-    shouldSort = true
-    location = 0
-    distance = 1000
-    threshold = 0.4
-    minMatchCharLength = 0
-    keys = ['title', 'permalink', 'summary', 'content']
-
-[menu]
-  [[menu.main]]
-    identifier = 'posts'
-    name = 'Posts'
-    url = '/posts/'
-    weight = 10
-
-  [[menu.main]]
-    identifier = 'tags'
-    name = 'Tags'
-    url = '/tags/'
-    weight = 20
-
-  [[menu.main]]
-    identifier = 'archives'
-    name = 'Archives'
-    url = '/archives/'
-    weight = 30
-
-  [[menu.main]]
-    identifier = 'search'
-    name = 'Search'
-    url = '/search/'
-    weight = 40
+  pagerSize = 5
 
 [outputs]
-  home = ['HTML', 'RSS', 'JSON']
+  home = ["HTML", "RSS"]
+
+[params]
+  header_image = "img/home-bg-jeep.jpg"
+  SEOTitle = "My Findings & Learnings"
+  description = "A personal blog documenting my findings, learnings, and explorations."
+  keyword = "blog, findings, learnings, technology, development"
+  slogan = "Curiosity-driven learning, one post at a time."
+  upstreamAttribution = true
+
+  image_404 = "img/404-bg.jpg"
+  title_404 = "Oops! Nothing to find here :("
+  omit_categories = false
+
+  # Disable analytics & comment services
+  page_view_counter = false
+  algolia_search = false
+
+  # Sidebar settings
+  sidebar_about_description = "Curious learner, sharing findings and explorations."
+  sidebar_avatar = "img/avatar.png"  # Add your avatar image to static/img/
+
+  featured_tags = true
+  featured_condition_size = 1
+
+  reward = false
+  friends = false
+  bookmarks = false
+  about_me = true
+
+  # Last posts
+  last_posts = true
+
+  [params.social]
+    rss    = true
+    github = "https://github.com/gvarchala-pixel"
+
+  [[params.additional_menus]]
+    title = "ARCHIVE"
+    href  = "/archive/"
+
+  [[params.additional_menus]]
+    title = "TAGS"
+    href  = "/tags/"
+
+  [[params.additional_menus]]
+    title = "ABOUT"
+    href  = "/about/"
 
 [markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    startLevel = 1
   [markup.highlight]
+    style = "dracula"
     codeFences = true
     guessSyntax = true
     lineNos = true
-    style = 'monokai'
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
