@@ -1,0 +1,85 @@
+baseURL = 'https://USERNAME.github.io/'  # TODO: Replace USERNAME with your GitHub username
+languageCode = 'en-us'
+title = 'My Findings & Learnings'
+theme = 'PaperMod'
+paginate = 10
+
+[params]
+  env = 'production'
+  description = 'A blog about my personal findings, learnings, and explorations.'
+  author = 'Your Name'  # TODO: Replace with your name
+  defaultTheme = 'auto'  # auto, light, dark
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+
+  [params.homeInfoParams]
+    Title = "Hey there! \U0001F44B"
+    Content = "Welcome to my blog — a place where I share my findings, learnings, and things that excite me."
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/USERNAME'  # TODO: Replace
+
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+
+  [params.editPost]
+    URL = 'https://github.com/USERNAME/USERNAME.github.io/tree/main/content'  # TODO: Replace
+    Text = 'Suggest Changes'
+    appendFilePath = true
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ['title', 'permalink', 'summary', 'content']
+
+[menu]
+  [[menu.main]]
+    identifier = 'posts'
+    name = 'Posts'
+    url = '/posts/'
+    weight = 10
+
+  [[menu.main]]
+    identifier = 'tags'
+    name = 'Tags'
+    url = '/tags/'
+    weight = 20
+
+  [[menu.main]]
+    identifier = 'archives'
+    name = 'Archives'
+    url = '/archives/'
+    weight = 30
+
+  [[menu.main]]
+    identifier = 'search'
+    name = 'Search'
+    url = '/search/'
+    weight = 40
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = 'monokai'
