@@ -1,5 +1,5 @@
 baseurl = "https://gvarchala-pixel.github.io/"
-title = "Varchala"
+title = "Varchaleswari Ganugapati"
 theme = "hugo-theme-cleanwhite"
 languageCode = "en-us"
 preserveTaxonomyNames = true
@@ -12,7 +12,7 @@ preserveTaxonomyNames = true
 
 [params]
   header_image = "img/homeimg1.jpg"
-  SEOTitle = "Varchala — Systems That Last"
+  SEOTitle = "Varchaleswari Ganugapati — Systems That Last"
   description = "AI leadership, system design, and thoughtful decision-making. Building systems that do not just work — they last."
   keyword = "blog, AI, systems, software engineering, machine learning, production systems"
   slogan = "I build systems that do not just work. They last."
@@ -27,8 +27,8 @@ preserveTaxonomyNames = true
   algolia_search = false
 
   # Sidebar settings
-  sidebar_about_description = "Software engineer at the intersection of AI and large-scale production systems."
-  sidebar_avatar = "img/avatar.png"  # Add your avatar image to static/img/
+  sidebar_about_description = ""
+  # sidebar_avatar = "img/avatar.png"   # Uncomment and add avatar to static/img/ to show in sidebar
 
   featured_tags = true
   featured_condition_size = 1
