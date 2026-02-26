@@ -11,7 +11,7 @@ preserveTaxonomyNames = true
   home = ["HTML", "RSS"]
 
 [params]
-  header_image = "img/homeimg1.jpg"
+  header_image = "img/header-bg.jpg"
   SEOTitle = "Varchala — Systems That Last"
   description = "AI leadership, system design, and thoughtful decision-making. Building systems that do not just work — they last."
   keyword = "blog, AI, systems, software engineering, machine learning, production systems"
