@@ -15,7 +15,9 @@ preserveTaxonomyNames = true
   SEOTitle = "Varchaleswari Ganugapati — Systems That Last"
   description = "AI leadership, system design, and thoughtful decision-making. Building systems that do not just work — they last."
   keyword = "blog, AI, systems, software engineering, machine learning, production systems"
-  slogan = "I build systems that do not just work. They last."
+  # Big hero headline (catchy phrase); nav stays as site title "Varchaleswari Ganugapati"
+  hero_headline = "Systems That Last."
+  slogan = "Strength doesn't need to be loud. It needs to be steady."
   upstreamAttribution = true
 
   image_404 = "img/404-bg.jpg"
@@ -43,6 +45,21 @@ preserveTaxonomyNames = true
 
   # Last posts
   last_posts = true
+
+  # Comments via Giscus (GitHub Discussions). Get your IDs at https://giscus.app
+  # 1. Enable Discussions on your GitHub repo (Settings → General → Discussions).
+  # 2. Install https://github.com/apps/giscus on that repo.
+  # 3. At giscus.app, select the repo and category; copy the data-* values here.
+  [params.giscus]
+  data_repo = "gvarchala-pixel/gvarchala-pixel.github.io"
+  data_repo_id = ""
+  data_category = "Comments"
+  data_category_id = ""
+  data_mapping = "pathname"
+  data_reactions_enabled = "1"
+  data_emit_metadata = "0"
+  data_lang = "en"
+  crossorigin = "anonymous"
 
   [params.social]
     rss    = true
