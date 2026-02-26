@@ -1,5 +1,5 @@
 baseurl = "https://gvarchala-pixel.github.io/"
-title = "My Findings & Learnings"
+title = "Varchala"
 theme = "hugo-theme-cleanwhite"
 languageCode = "en-us"
 preserveTaxonomyNames = true
@@ -11,11 +11,11 @@ preserveTaxonomyNames = true
   home = ["HTML", "RSS"]
 
 [params]
-  header_image = "img/home-bg-jeep.jpg"
-  SEOTitle = "My Findings & Learnings"
-  description = "A personal blog documenting my findings, learnings, and explorations."
-  keyword = "blog, findings, learnings, technology, development"
-  slogan = "Curiosity-driven learning, one post at a time."
+  header_image = "img/homeimg1.jpg"
+  SEOTitle = "Varchala — Systems That Last"
+  description = "AI leadership, system design, and thoughtful decision-making. Building systems that do not just work — they last."
+  keyword = "blog, AI, systems, software engineering, machine learning, production systems"
+  slogan = "I build systems that do not just work. They last."
   upstreamAttribution = true
 
   image_404 = "img/404-bg.jpg"
@@ -27,7 +27,7 @@ preserveTaxonomyNames = true
   algolia_search = false
 
   # Sidebar settings
-  sidebar_about_description = "Curious learner, sharing findings and explorations."
+  sidebar_about_description = "Software engineer at the intersection of AI and large-scale production systems."
   sidebar_avatar = "img/avatar.png"  # Add your avatar image to static/img/
 
   featured_tags = true
