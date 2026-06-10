@@ -52,9 +52,9 @@ preserveTaxonomyNames = true
   # 3. At giscus.app, select the repo and category; copy the data-* values here.
   [params.giscus]
   data_repo = "gvarchala-pixel/gvarchala-pixel.github.io"
-  data_repo_id = "R_kgDORZD-Qw"
+  data_repo_id = "R_kgDOS1-Skw"
   data_category = "General"
-  data_category_id = "DIC_kwDORZD-Q84C8_jD"
+  data_category_id = "DIC_kwDOS1-Sk84C-3D_"
   data_mapping = "pathname"
   data_reactions_enabled = "1"
   data_emit_metadata = "0"
