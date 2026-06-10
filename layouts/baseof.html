@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{ partial "head.html" . }}
+{{ partial "nav.html" . }}
+<!-- Page Header -->
+{{ block "header" .}}
+<header class="intro-header" style="background-image: url('{{ .Site.Params.header_image | relURL }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>{{ .Site.Params.hero_headline | default .Site.Title }}</h1>
+                    <span class="subheading">{{ .Site.Params.slogan }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{{ end }}
+
+{{ block "main" . }}
+{{ end }}
+
+{{ partial "footer.html" . }}
+{{ if .Store.Get "hasMermaid" }}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"
+          data-cfasync="false"></script>
+  <script data-cfasync="false">
+    (function () {
+      var cfg = {
+        startOnLoad: false,
+        securityLevel: 'loose',
+        theme: 'base',
+        themeVariables: {
+          fontFamily: '"Inter", "Segoe UI", system-ui, sans-serif',
+          fontSize: '14px',
+          primaryColor: '#f0f7ff',
+          primaryBorderColor: '#4a90d9',
+          primaryTextColor: '#1a1a2e',
+          secondaryColor: '#f0faf4',
+          secondaryBorderColor: '#2ecc71',
+          secondaryTextColor: '#1a1a2e',
+          tertiaryColor: '#fffbec',
+          tertiaryBorderColor: '#f5a623',
+          tertiaryTextColor: '#1a1a2e',
+          lineColor: '#6b7280',
+          edgeLabelBackground: '#ffffff',
+          actorBkg: '#f0f7ff',
+          actorBorder: '#4a90d9',
+          actorTextColor: '#1a1a2e',
+          activationBkgColor: '#dbeafe',
+          activationBorderColor: '#4a90d9',
+          noteBkgColor: '#fffbec',
+          noteBorderColor: '#f5a623',
+          signalColor: '#4a90d9',
+          signalTextColor: '#1a1a2e',
+          clusterBkg: '#f8fafc',
+          clusterBorder: '#cbd5e1',
+          titleColor: '#1a1a2e'
+        }
+      };
+
+      /* ── Lightbox ─────────────────────────────────────────────────────── */
+      function buildLightbox() {
+        var lb = document.createElement('div');
+        lb.id = 'mermaid-lightbox';
+        lb.style.cssText = [
+          'display:none','position:fixed','inset:0','z-index:9999',
+          'background:rgba(0,0,0,0.82)','cursor:zoom-out',
+          'align-items:center','justify-content:center','padding:2rem'
+        ].join(';');
+        var inner = document.createElement('div');
+        inner.id = 'mermaid-lightbox-inner';
+        inner.style.cssText = [
+          'background:#fff','border-radius:12px','padding:2rem',
+          'max-width:92vw','max-height:90vh','overflow:auto',
+          'box-shadow:0 8px 40px rgba(0,0,0,0.5)','cursor:default'
+        ].join(';');
+        lb.appendChild(inner);
+        document.body.appendChild(lb);
+
+        lb.addEventListener('click', function(e) {
+          if (e.target === lb) closeLightbox();
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeLightbox();
+        });
+        return lb;
+      }
+
+      function openLightbox(svgEl) {
+        var lb = document.getElementById('mermaid-lightbox') || buildLightbox();
+        var inner = document.getElementById('mermaid-lightbox-inner');
+        inner.innerHTML = '';
+        var clone = svgEl.cloneNode(true);
+        clone.style.maxWidth = '100%';
+        clone.style.height = 'auto';
+        inner.appendChild(clone);
+        lb.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        var lb = document.getElementById('mermaid-lightbox');
+        if (lb) lb.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      function renderAll() {
+        mermaid.initialize(cfg);
+        var nodes = document.querySelectorAll('pre.mermaid');
+        if (!nodes.length) return;
+
+        nodes.forEach(function (el, i) {
+          var id = 'mermaid-' + i;
+          var src = el.textContent;
+          mermaid.render(id, src).then(function (result) {
+            el.innerHTML = result.svg;
+            el.style.cursor = 'zoom-in';
+            el.title = 'Click to expand';
+            var svg = el.querySelector('svg');
+            if (svg) {
+              el.addEventListener('click', function() { openLightbox(svg); });
+            }
+          }).catch(function () { /* leave as-is on error */ });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderAll);
+      } else {
+        renderAll();
+      }
+    })();
+  </script>
+{{ end }}
+</body>
+</html>

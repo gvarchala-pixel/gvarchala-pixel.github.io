@@ -1,0 +1,91 @@
+baseurl = "https://gvarchala-pixel.github.io/"
+title = "Varchaleswari Ganugapati"
+theme = "hugo-theme-cleanwhite"
+languageCode = "en-us"
+preserveTaxonomyNames = true
+
+[pagination]
+  pagerSize = 5
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[params]
+  header_image = "img/homeimg1.jpg"
+  SEOTitle = "Varchaleswari Ganugapati — Systems That Last"
+  description = "AI leadership, system design, and thoughtful decision-making. Building systems that do not just work — they last."
+  keyword = "blog, AI, systems, software engineering, machine learning, production systems"
+  # Big hero headline (catchy phrase); nav stays as site title "Varchaleswari Ganugapati"
+  hero_headline = "Systems That Last."
+  slogan = "Strength doesn't need to be loud. It needs to be steady."
+  upstreamAttribution = true
+
+  image_404 = "img/404-bg.jpg"
+  title_404 = "Oops! Nothing to find here :("
+  omit_categories = false
+
+  # Disable analytics & comment services
+  page_view_counter = false
+  algolia_search = false
+
+  # Sidebar settings
+  sidebar_about_description = ""
+  # sidebar_avatar = "img/avatar.png"   # Uncomment and add avatar to static/img/ to show in sidebar
+
+  featured_tags = true
+  featured_condition_size = 1
+
+  reward = false
+  friends = false
+  bookmarks = false
+  about_me = true
+
+  # Custom assets (project static/ overrides)
+  custom_css = ["/css/custom.css"]
+
+  # Last posts
+  last_posts = true
+
+  # Comments via Giscus (GitHub Discussions). Get your IDs at https://giscus.app
+  # 1. Enable Discussions on your GitHub repo (Settings → General → Discussions).
+  # 2. Install https://github.com/apps/giscus on that repo.
+  # 3. At giscus.app, select the repo and category; copy the data-* values here.
+  [params.giscus]
+  data_repo = "gvarchala-pixel/gvarchala-pixel.github.io"
+  data_repo_id = "R_kgDORZD-Qw"
+  data_category = "General"
+  data_category_id = "DIC_kwDORZD-Q84C8_jD"
+  data_mapping = "pathname"
+  data_reactions_enabled = "1"
+  data_emit_metadata = "0"
+  data_lang = "en"
+  crossorigin = "anonymous"
+
+  [params.social]
+    rss    = true
+    github = "https://github.com/gvarchala-pixel"
+
+  [[params.additional_menus]]
+    title = "ARCHIVE"
+    href  = "/archive/"
+
+  [[params.additional_menus]]
+    title = "TAGS"
+    href  = "/tags/"
+
+  [[params.additional_menus]]
+    title = "ABOUT"
+    href  = "/about/"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    startLevel = 1
+  [markup.highlight]
+    style = "dracula"
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
